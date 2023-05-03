@@ -2,7 +2,8 @@
 
 ## Learning Goals
 
-- Create a Many-to-many relationship.
+- Create a Many-to-many relationship using an intermediary class.
+- Write aggregate methods.
 
 ***
 
