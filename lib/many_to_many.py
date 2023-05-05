@@ -12,7 +12,7 @@ class Author:
         self.contracts.add(contract)
         self.add_book(book)
         book.contracts.add(contract)
-        book.authors.add(self)
+        book.add_author(self)
 
     def books(self):
         return {contract.book for contract in self.contracts}
@@ -35,10 +35,14 @@ class Book:
         self.authors = authors if authors else set()
 
 
+
+    def add_author(self, author):
+        if not isinstance(author, Author):
+            raise TypeError("author must be an instance of the Author class")
+        self.authors.add(author)
+
     def __repr__(self):
         return f'Book({self.title})'
-
-
 
 class Contract:
 

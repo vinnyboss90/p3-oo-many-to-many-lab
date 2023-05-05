@@ -56,7 +56,7 @@ The `Author` class should have the following methods:
 
 The `Book` class should have the following methods:
 
-- `add_author`(author): This method should add the specified Author object to the book's authors set.
+- `add_author`(author): This method should add the specified Author object to the book's authors set. Add validation for the Author object.
 
 The `Contract` class should have the following methods:
 
