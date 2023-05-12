@@ -34,33 +34,38 @@ messages to complete your work in the `lib/` folder.
 
 ## Instructions
 
-Create a Book class that has the following properties:  `title` (string) `authors` (set) `contracts` (set)
+Create a Book class that has the following attributes:  `title` (string)
 
-- The authors property should contain a set of Author objects that have contributed to the book, while the contracts property should contain a set of Contract objects that represent the agreements between the authors and the book.
-
-Create an Author class that has the following properties: `name` (string) `books` (set) `contracts` (set)
-
-- The books property should contain a set of Book objects that the author has contributed to, while the contracts property should contain a set of Contract objects that represent the agreements between the author and the books.
+Create an Author class that has the following attributes: `name` (string)
 
 Create a Contract class that has the following properties:
-`author` (Author object) `book` (Book object) `date` (string) `royalties` (number).
-This class should also keep track of `all` contracts using a class variable.
+`author` (Author object), `book` (Book object), `date` (string), and `royalties`
+(int).
 
-- The author property should be an instance of the Author class, while the book property should be an instance of the Book class. The date property should be a string that represents the date when the contract was signed, while the royalties property should be a number that represents the percentage of royalties that the author will receive for the book.
+All classes should also keep track of `all` members using a class variable.
+
+- The author property should be an instance of the Author class, while the book
+  property should be an instance of the Book class. The date property should be a
+  string that represents the date when the contract was signed, while the
+  royalties property should be a number that represents the percentage of
+  royalties that the author will receive for the book.
+  - All setters should `raise Exception` upon failure.
 
 The `Author` class should have the following methods:
 
-- `sign_contract(book, date, royalties)`: This method should create a new Contract object between the author and the specified book with the specified date and royalties
-
-- `total_royalties()`: This method should return the total amount of royalties that the author has earned from all of their contracts.
-
-The `Book` class should have the following methods:
-
-- `add_author`(author): This method should add the specified Author object to the book's authors set. Add validation for the Author object.
+- `contracts(self)`: This method should return a list of related contracts.
+- `books(self)`: This method should return a list of related books using the
+  `Contract` class as an intermediary.
+- `sign_contract(book, date, royalties)`: This method should create and return a
+  new `Contract` object between the author and the specified book with the
+  specified date and royalties
+- `total_royalties()`: This method should return the total amount of royalties
+  that the author has earned from all of their contracts.
 
 The `Contract` class should have the following methods:
 
-- A class method `contracts_by_date`(cls, date): This method should return all contracts that have the same date as the date passed into the method. You should use the `all` class variable in this method.
+- A class method `contracts_by_date`(cls, date): This method should return all
+  contracts that have the same date as the date passed into the method.
 
 ***
 
