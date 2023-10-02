@@ -85,5 +85,6 @@ class Contract:
         self._royalties = value
 
     @classmethod
-    def contracts_by_date(cls):
-        return sorted(cls.all, key=lambda c: c.date)
+    def contracts_by_date(cls, date):
+        return [contract for contract in cls.all if contract.date == date]
+        
